@@ -1,7 +1,10 @@
-# How start the proyect with docker compose
+# My Favorite Github Repos
+
+A small app to search repositories through the GitHub API, mark favorites, and add personal notes. Built with Next.js, Prisma, React Query, server-side caching, PostgreSQL, and Docker.
+
+## How start the proyect with docker compose
 
 Navigate to the project root, inside prisma-nextjs-dockerized.
-
 
 ```
 make up
@@ -11,36 +14,13 @@ or
 docker-compose up
 ```
 
-
-# If you want to enter to the container terminal use 
-
-docker exec -it <container-name> sh
-
-
-# Using Next.js Docker Template with Docker Compose
-
-## Enable and Test Postgres
-
-*   Make sure Docker Compose is running.
-*   Check that the Postgres service is up and accessible (default port: 5432).
-*   You can use a tool like `psql` or TablePlus to connect and verify the database.
-
-## Install Make
+> ### Install Make
+> 
+> Please install Make if you want to use execution shortcuts
 
 ```
 brew install make
 ```
-
-## Enable Prisma
-
-*   Run `npx prisma generate` to generate the Prisma client.
-*   Run `npx prisma migrate dev` to apply migrations and initialize the database.
-
----
-
-## Use of AI
-
-AI was used to generate some test cases and assist with certain tasks due to time constraints.
 
 ---
 
@@ -52,6 +32,8 @@ The GitHub API was used to get an initial overview of repositories. For deeper v
 
 ## Cache Strategy
 
+This project use different approach of caching front end caching with ReactQuery and server side caching with Nextjs. For example
+
 *   **GitHub:**  
     Server-side cache is implemented. If a result is not found, the cache is reset to ensure fresh data is fetched from GitHub.
 *   **Favorites:**  
@@ -61,26 +43,36 @@ The GitHub API was used to get an initial overview of repositories. For deeper v
 
 ---
 
-## Testing
+## Design Approach
 
-Some test cases were generated with the help of AI to speed up development.
+*   Separation of concerns with an infrastructure (DB) folder and features folders kept separate from the main Next.js app folder.
+*   Decoupled frontend scaffolding: for example, each feature folder contains its own components, hooks, services, and types folders.
+*   A vertical slicing approach was used, placing each new feature within its own dedicated folder.
 
 ---
 
-## Design Approach
+## Testing
 
-*   Atomic design principles were followed.
-*   Vertical slicing approach was used for new features.
+*   The setup with Vitest and Playwright was implemented for unit, component, and end-to-end testing. However, the creation of the test cases is still pending due to lack of time.
+
+---
+
+## Use of AI or other tools
+
+*   AI was used to generate some snipeds of code like the conditioned logic of the favRepoToggle and assist with certain tasks due to time constraints. Also in the troubleshooting of prisma in the container deployment.
+*   Using Next.js Docker Template with Docker Compose. For this project, I reused a previously dockerized Next.js project to save time.
 
 ---
 
 ## some challenges
 
-First I retrieve isFavorite attribute using a Set but when I noticed the necesity of use notes i refactored the code to use Maps for a key/value approach
+*   First I retrieve isFavorite attribute using a Set but when I noticed the necesity of use notes i refactored the code to use Maps for a key/value approach.
+*   Prisma client compatibility between host and container
 
 ---
 
 ## Next Steps
 
+*   Implement Atomic design principles to improve modularity of components.
 *   Deploy to Vercel (default) or, if AWS architecture is available, consider deploying to Amplify as an alternative.
 *   Install Sentry for improved error tracking and monitoring.
