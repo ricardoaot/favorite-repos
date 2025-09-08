@@ -32,7 +32,7 @@ http://localhost:3002/
 
 ## Video Demo
 
-you can access to a demo in this link
+You can access to a quick demo in this link:
 
 ```
 https://www.loom.com/share/95022cbc373d4aa395363d4a5c190897?sid=5b29bcd2-486a-4a22-b361-dde8caa4b697
