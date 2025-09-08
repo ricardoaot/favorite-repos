@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64", "linux-musl-arm64-openssl-3.0.x"]
 }
 
 datasource db {
@@ -22,7 +23,7 @@ model Item {
 model favorite_repository {
   id        Int      @id @default(autoincrement())
   appUserId String
-  repoId    String @unique
+  repoId    String   @unique
   notes     String?
   createdAt DateTime @default(now())
 }

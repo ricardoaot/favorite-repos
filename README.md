@@ -2,9 +2,20 @@
 
 Navigate to the project root, inside prisma-nextjs-dockerized.
 
+
 ```
+make up
+
+or 
+
 docker-compose up
 ```
+
+
+# If you want to enter to the container terminal use 
+
+docker exec -it <container-name> sh
+
 
 # Using Next.js Docker Template with Docker Compose
 

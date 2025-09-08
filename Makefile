@@ -4,7 +4,7 @@ SERVICE = web
 
 # Start services
 up:
-	$(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up
 
 # Stop services
 down:
