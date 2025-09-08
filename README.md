@@ -4,7 +4,7 @@ A small app to search repositories through the GitHub API, mark favorites, and a
 
 ## How start the proyect with docker compose
 
-Navigate to the project root, inside prisma-nextjs-dockerized.
+1.  Navigate to the project root, inside prisma-nextjs-dockerized.
 
 ```
 make up
@@ -20,6 +20,22 @@ docker-compose up
 
 ```
 brew install make
+```
+
+2\. when the project is up you can go to the brower and visit
+
+```
+http://localhost:3002/
+```
+
+---
+
+## Video Demo
+
+you can access to a demo in this link
+
+```
+https://www.loom.com/share/95022cbc373d4aa395363d4a5c190897?sid=5b29bcd2-486a-4a22-b361-dde8caa4b697
 ```
 
 ---
